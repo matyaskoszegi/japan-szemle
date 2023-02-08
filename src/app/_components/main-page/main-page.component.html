@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row text-center mt-4">
+        <h1>Üdvözlünk a Japán Szemle oldalán!</h1>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <nav>
+        
+        <ul>
+            <li>
+                <a routerLink="/category/prose">
+                    Próza
+                </a>
+            </li>
+            <li>
+                <a routerLink="/category/poems">
+                    Vers
+                </a>
+            </li>
+            <li>
+                <a routerLink="/category/lyrics">
+                    Dalszöveg
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center gy-3 mt-3 mb-4">
+        <h2>Legutóbbi megjelenések</h2>
+        <div *ngIf="articles" class="article-list">
+            <div class="col-12 col-md-6 col-lg-4 mt-4 h-100" *ngFor="let article of articles ">
+                <div  *ngIf="article.isPublished === 'igen'">
+                    <div class="card h-100 {{article.category}}">
+                        <img class="card-img-top img-fluid"
+                            src="{{article.imagePath}}"
+                            alt="Title">
+                        <div class="card-body">
+                            <p class="category-label">{{article.category}}</p>
+                            <h4 class="card-title">{{article.title}}</h4>
+                            <p class="card-text">Szerző: {{article.author}}</p>
+                            <p class="card-text">Fordította: {{article.translator}}</p>
+                        </div>
+                        <a routerLink="published/detail/{{article.firebaseID}}">
+                            Tovább
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+form {
+    margin-top: 50px;
+    padding-left: 0;
+    background: #e3d5ca;
+    border: #1e6091 1px solid;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+}
+
+.login-success {
+    padding: 10px; 
+    font-size: 20px; 
+    border: solid 1px rgb(16, 74, 0);
+    background-color: rgba(139, 244, 74, 0.55) ;
+    color:#5e534d; 
+    font-weight: bold; 
+    width: 100%; 
+    margin-top: 30px;
+}

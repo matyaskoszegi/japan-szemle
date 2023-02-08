@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row text-center mt-4">
+        <h1>Dalszövegek</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center gy-3 mt-3 mb-4">
+        <h2>Legutóbbi megjelenések</h2>
+        <div *ngIf="articles" class="article-list">
+            <div class="col-12 mt-4" *ngFor="let article of articles ">
+                <div *ngIf="article.isPublished == 'igen'">
+                    <div *ngIf="article.category == 'dalszöveg'">
+                        <div class="card h-100 {{article.category}}">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img class="card-img-top img-fluid" src="{{article.imagePath}}" alt="Title">
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{article.title}}</h4>
+                                        <p class="card-text"><b>A mű eredeti szerzője: </b>{{article.author}}</p>
+                                        <p class="card-text"><b>A mű eredeti címe: </b>{{article.originalTitle}}</p>
+                                        <p class="card-text"><b>Alkotásának dátuma: </b>{{article.originalDate}}</p>
+                                        <p class="card-text"><b>Fordította: </b>{{article.translator}}</p>
+                                        <p class="card-text"><b>Fordítás dátuma: </b>{{article.translationDate}}</p>
+                                        <div>
+                                            <p><b>Fordító gondolatai a művel kapcsolatban:</b></p>
+                                            <p class="translator-thoughts" [innerHTML]="article.translation"></p>
+                                        </div>
+
+                                        <div>
+                                            <a class="file-path" href="{{article.filePath}}"
+                                                target="_blank">Elolvasom</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

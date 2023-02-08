@@ -1,0 +1,25 @@
+img {
+    border-radius: 50%;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+p {
+    color: #5e534d;;
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 15px;
+}
+
+.row {
+    background-color: #dcd3c8;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+hr {
+    margin-top: 30px;
+    color: #5e534d;
+}

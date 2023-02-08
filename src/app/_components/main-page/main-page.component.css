@@ -1,0 +1,110 @@
+.vers {
+  background-color: #bea596;
+}
+
+.próza {
+  background-color: #dfbfa8;
+}
+
+.dalszöveg {
+  background-color: #ece3d9;
+}
+
+.category-label {
+  position: relative;
+  background-color: #5e534d;
+  padding: 2px 15px;
+  display: inline-block;
+  color: #f5ebe0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+  }
+
+.card {
+  margin-left: 15px;
+  margin-right: 15px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.45);
+  cursor: pointer;
+  transition: 0.4s;
+  min-height: 500px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-title, .card-text {
+  color: #433b37;
+}
+
+.article-list {
+    padding: 0;
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+  
+  a {
+    background-color:#5e534d;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+
+  a:hover {
+    background-color: whitesmoke;
+    color: #5e534d;
+  }
+  
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.container nav li {
+  padding: 0px 20px;
+}
+
+.container nav li a {
+  width: auto;
+}
+
+  @media (max-width: 775px) {
+    a {
+      width: 18%;
+      box-sizing: content-box;
+    }
+  
+    .container nav ul {
+      flex-direction: column;
+    }
+  
+}
+ 

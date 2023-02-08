@@ -1,0 +1,52 @@
+img {
+    display: block;
+    max-height: 500px;
+}
+
+.card {
+    background-color: #ccc4bb;
+}
+
+.category-label {
+    background-color: #5e534d;
+    margin-top: 25px;
+    padding: 2px 25px;
+    display: inline-block;
+    color: #f5ebe0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+.card-title {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    color: #5e534d;
+    font-weight: bold;
+}
+
+p {
+    color: #5e534d;
+    font-size: 20px;
+
+}
+
+.translator-thoughts {
+    text-align: justify;
+}
+
+.file-path {
+    background-color: #5e534d;
+    font-size: 30px;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #f5ebe0;
+    display: inline-block;
+    transition: 0.4s;
+    margin-top: 15px;
+}
+
+.file-path:hover {
+    background-color: #f5ebe0;
+    color: #5e534d;
+    transform: scale(1.01);
+}

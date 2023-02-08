@@ -1,0 +1,88 @@
+<div *ngIf="auth.loggedIn">
+    <div class="container">
+        <div class="row text-center">
+            <h2>Jóváhagyandó fordítások</h2>
+            <div *ngIf=articles class="heroes-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-3"></div>
+                        <a *ngFor="let article of articles" routerLink="detail/{{article.firebaseID}}">
+                            <div *ngIf="article.isPublished === 'nem'">
+                                <div class="card">
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{article.title}}</h4>
+                                        <p class="card-text">írta: {{article.author}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <h2>Új fordítás hozzáadása admin által</h2>
+
+            <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+                <label for="title">
+                    Fordított cím:
+                    <input type="text" formControlName="title" id="title">
+                </label>
+
+                <label for="author">
+                    Szerző:
+                    <input type="text" formControlName="author" id="author">
+                </label>
+
+                <label for="originalTitle">
+                    Mű eredeti címe:
+                    <input type="text" formControlName="originalTitle" id="originalTitle">
+                </label>
+
+                <label for="originalDate">
+                    Mű alkotásának dátuma:
+                    <input type="date" formControlName="originalDate" id="originalDate">
+                </label>
+
+                <label for="translator">
+                    Fordító neve:
+                    <input type="text" formControlName="translator" id="translator">
+                </label>
+
+                <label for="translationDate">
+                    Fordítás dátuma:
+                    <input type="date" formControlName="translationDate" id="translationDate">
+                </label>
+
+                <label for="category" class="form-label">Kategória</label>
+                <select class="form-select form-select-" name="category" id="category" formControlName="category">
+                    <option value="vers">Vers</option>
+                    <option value="próza">Próza</option>
+                    <option value="dalszöveg">Dalszöveg</option>
+
+                </select>
+
+                <label for="translation" class="form-label">Fordító megjegyzése</label>
+                <textarea type="text" class="form-control form-control-sm" formControlName="translation"
+                    name="translation" id="translation" placeholder="" rows="10" cols="50"></textarea>
+
+                <label for="isPublished" class="form-label">Szeretnéd publikálni az oldalra?</label>
+                <select class="form-select form-select-" name="isPublished" id="isPublished"
+                    formControlName="isPublished">
+                    <option value="nem">Nem</option>
+                    <option value="igen">Igen</option>
+
+
+                </select>
+
+                <button style="width: 100px;" [disabled]="!articleForm.valid" type="submit">Feltöltés</button>
+            </form>
+        </div>
+    </div>
+</div>

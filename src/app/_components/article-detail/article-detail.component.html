@@ -1,0 +1,98 @@
+<div *ngIf="auth.loggedIn">
+
+    <div *ngIf="article">
+        <div class="container mt-4">
+            <div class="row">
+                <h2>{{article.title}} c. mű szerkesztése</h2>
+
+                <div>
+                    <label for="article-title">Fordított cím: </label>
+                    <input id="article-title" [(ngModel)]="article.title" placeholder="title">
+                </div>
+
+                <div>
+                    <label for="author">Szerző: </label>
+                    <input id="author" [(ngModel)]="article.author" placeholder="name">
+                </div>
+
+                <div>
+                    <label for="originalTitle">Mű eredeti címe: </label>
+                    <input id="originalTitle" [(ngModel)]="article.originalTitle" placeholder="name">
+                </div>
+
+                <div>
+                    <label for="originalDate">Mű alkotásának dátuma: </label>
+                    <input type="date" id="originalDate" [(ngModel)]="article.originalDate" placeholder="name">
+                </div>
+
+                <div>
+                    <label for="translator">Fordító neve: </label>
+                    <input id="translator" [(ngModel)]="article.translator" placeholder="name">
+                </div>
+
+                <div>
+                    <label for="translationDate">Fordítás dátuma: </label>
+                    <input type="date" id="translationDate" [(ngModel)]="article.translationDate" placeholder="name">
+                </div>
+
+                <div>
+                    <label for="category" class="form-label">Kategória</label>
+                    <select class="form-select form-select-" [(ngModel)]="article.category" id="category"
+                        style="width: 300px;">
+                        <option value="vers">Vers</option>
+                        <option value="próza">Próza</option>
+                        <option value="dalszöveg">Dalszöveg</option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label for="translation" class="form-label">Fordító megjegyzése</label>
+                    <textarea type="text" class="form-control form-control-sm" [(ngModel)]="article.translation"
+                        id="translation" placeholder="" rows="10" cols="50"></textarea>
+
+                </div>
+
+                <div>
+                    <label for="isPublished" class="form-label">Szeretnéd publikálni az oldalra?</label>
+                    <select class="form-select form-select-" [(ngModel)]="article.isPublished" id="isPublished">
+
+                        <option value="nem">Nem</option>
+                        <option value="igen">Igen</option>
+
+
+                    </select>
+                </div>
+
+                <div>
+                    <label for="imagePath">Kép elérési útja: </label>
+                    <input id="imagePath" [(ngModel)]="article.imagePath" placeholder="másold be a kép elérési útját">
+                </div>
+
+                <div>
+                    <label for="filePath">Fájl elérési útja: </label>
+                    <input id="filePath" [(ngModel)]="article.filePath" placeholder="másold be a fájl elérési útját">
+                </div>
+
+                <div>
+                    <label for="imagePath">Beküldő neve: </label>
+                    <input id="imagePath" [(ngModel)]="article.sender" placeholder="beküldő">
+                </div>
+
+                <div>
+                    <label for="imagePath">Beküldő email címe: </label>
+                    <input id="imagePath" [(ngModel)]="article.emailAddress" placeholder="email">
+                </div>
+
+
+
+                <button style="margin-left: 30px;" (click)="save()">Mentés</button>
+                <button (click)="delete()">Törlés</button>
+
+
+                
+            </div>
+            <button style="margin-left: 20px;" type="button" (click)="goBack()">Vissza</button>
+        </div>
+    </div>
+</div>

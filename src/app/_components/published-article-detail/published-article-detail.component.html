@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-5">
+        <div *ngIf="article">
+            <img class="img-fluid" src="{{article.imagePath}}" alt="article photo">
+            <p class="category-label">{{article.category}}</p>
+            <h2>{{article.title}}</h2>
+            <p><b>A mű eredeti szerzője: </b>{{article.author}}</p>
+            <p><b>A mű eredeti címe: </b>{{article.originalTitle}}</p>
+            <p><b>Alkotásának dátuma: </b>{{article.originalDate}}</p>
+            <br>
+            <p><b>Fordította: </b>{{article.translator}}</p>
+            <p><b>Fordítás dátuma: </b>{{article.translationDate}}</p>
+            <div>
+                <p><b>Fordító gondolatai a művel kapcsolatban:</b></p>
+                <p class="translator-thoughts"[innerHTML]="article.translation"></p>
+            </div>
+            
+            <div>
+                <a class="file-path" href="{{article.filePath}}" target="_blank">Elolvasom</a>
+            </div>
+                
+            
+
+        </div>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <button type="button" (click)="goBack()">Vissza</button>
+</div>

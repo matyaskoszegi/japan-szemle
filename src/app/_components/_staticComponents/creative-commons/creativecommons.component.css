@@ -1,0 +1,13 @@
+p {
+    color: #6f635c;
+    font-size: 20px;
+    text-align: justify;
+}
+
+a {
+    text-decoration: underlinea;
+    color: #6f635c;
+    font-size: 20px;
+    text-align: justify; 
+    font-weight: bold; 
+}

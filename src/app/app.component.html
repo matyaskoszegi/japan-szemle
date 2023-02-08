@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 mainnav">
+            
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a class="d-flex align-items-center pb-3 mb-md-4 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline side-title">{{title}}</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a routerLink="/" class="nav-link align-middle px-0">
+                            <i class="bi bi-house-door"></i> <span class="ms-1 d-none d-sm-inline">Kezdőlap</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-translate"></i> <span
+                                class="ms-1 d-none d-sm-inline">Fordítások</span> </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a  routerLink="/category/prose" class="nav-link px-0"> <span class="d-sm-inline">Próza</span></a>
+                            </li>
+                            <li>
+                                <a routerLink="/category/poems" class="nav-link px-0"> <span class="d-sm-inline">Vers</span></a>
+                            </li>
+                            <li>
+                                <a routerLink="/category/lyrics"class="nav-link px-0"> <span class="d-sm-inline">Dalszöveg</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi bi-stickies"></i> <span class="ms-1 d-none d-sm-inline">Fordítás
+                                publikálása</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a routerLink="/send-translation" class="nav-link px-0"> <span
+                                        class="d-sm-inline">Fordítás beadása</span></a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-sm-inline">Kéréseink</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-sm-inline">Szerzői
+                                        Jogok</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-sm-inline">Hogyan lehetek
+                                        szerkesztő?</span></a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-person-lines-fill"></i> <span class="ms-1 d-none d-sm-inline">Rólunk</span> </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a routerLink="/about-us" class="nav-link px-0"> <span class="d-sm-inline">Magunkról</span> </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-sm-inline">Fordítóink</span>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a routerLink="/editors"class="nav-link px-0"> <span class="d-sm-inline">Szerkesztőink</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/support-us" class="nav-link px-0"> <span class="d-sm-inline">Támogatás</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-bag"></i> <span class="ms-1 d-none d-sm-inline">Jogi
+                                dolgaink</span> </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a routerLink="/creative-commons" class="nav-link px-0"> <span class="d-sm-inline">Creative Commons</span></a>
+                            </li>
+                            <li>
+                                <a routerLink="/privacy" class="nav-link px-0"> <span class="d-sm-inline">Adatvédelmi
+                                        nyilatkozat</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li *ngIf="auth.loggedIn" style="margin-top: 50px;">
+                        <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-pencil-square"></i> <span class="ms-1 d-none d-sm-inline">Admin area</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a routerLink="/admin/dashboard" class="nav-link px-0"> <span
+                                        class="d-sm-inline">Dashboard</span></a>
+                            </li>
+                            <li>
+                                <a routerLink="/admin/published-list" class="nav-link px-0"> <span
+                                        class="d-sm-inline">Összes tétel</span></a>
+                            </li>
+
+                            <button type="button" (click)="auth.logout()">Kijelentkezés</button>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <hr>
+
+            </div>
+        </div>
+        <div class="col py-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid footer-container">
+    <footer>
+        <ul>
+            <li>
+                <a routerLink="/about-us">
+                    Rólunk
+                </a>
+            </li>
+            <li>
+                <a routerLink="/send-translation">
+                    Fordítás beadása
+                </a>
+            </li>
+            <li>
+                <a routerLink="/support-us">
+                    Támogatás
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin">
+                    Admin
+                </a>
+            </li>
+        </ul>
+        <p class="copyright">
+            JapánSzemle - Minden jog fenntartva
+        </p>
+    </footer>
+</div>

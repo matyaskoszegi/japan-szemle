@@ -1,0 +1,64 @@
+/* DashboardComponent's private CSS styles */
+
+h2 {
+    text-align: center;
+  }
+  
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+  
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  color: rgb(43, 43, 43)
+}
+
+textarea, select {
+  border: solid 2px black;
+  background-color: #f5ebe0; 
+  resize: none; 
+  width: 100%; 
+  font-size: 18px; 
+  color: #011a1b;
+}
+
+button {
+  background-color: #84756c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #f5ebe0;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  padding-right: 95px;
+  
+}
+
+button:hover {
+  background-color: #d6ccc2;
+  color: #84756c;
+}
+
+button:disabled {
+  background-color: rgb(196, 196, 196);
+  color: #84756c;
+  cursor: auto;
+}
+
+.card {
+  background-color: #d6ccc2;
+  transition: 0.4s;
+}
+
+.card-body {
+  color: #84756c;
+  
+}
+.card:hover {
+  transform: scale(1.02);
+}

@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row mt-3">
+        <h1>Itt küldd be a fordításaidat</h1>
+
+        <div class="instructions">
+            <h2>A beküldés során a következőkre figyelj:</h2>
+            <ul>
+                <li>
+                    Minden mezőt tölts ki
+                </li>
+                <li>
+                    Helyesen add meg az email címed
+                </li>
+                <li>
+                    Olyan letöltési linket adj meg a
+                    képhez és a fájlhoz is, amelyet szabadon meg
+                    tudunk nézni és ezt követően letölteni
+                </li>
+                <li>
+                    A fordított műhöz tartozó fájl formátuma pdf legyen
+                </li>
+                <li>
+                    Igyál sört!
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4">
+
+        <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 col-md-6">
+                <label for="title">
+                    Mű fordított címe:
+                    <input type="text" formControlName="title" id="title">
+                </label>
+
+                <label for="author">
+                    Eredeti szerző:
+                    <input type="text" formControlName="author" id="author">
+                </label>
+
+                <label for="originalTitle">
+                    Eredeti cím:
+                    <input type="text" formControlName="originalTitle" id="originalTitle">
+                </label>
+
+                <label for="originalDate">
+                    Eredeti dátum:
+                    <input type="date" formControlName="originalDate" id="originalDate">
+                </label>
+
+                <label for="translator">
+                    Fordító neve:
+                    <input type="text" formControlName="translator" id="translator">
+                </label>
+
+                <label for="translationDate">
+                    Fordítás dátuma:
+                    <input type="date" formControlName="translationDate" id="translationDate">
+                </label>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="category" class="form-label">Kategória</label>
+                <select class="form-select form-select-" name="category" id="category" formControlName="category">
+                    <option value="vers">Vers</option>
+                    <option value="próza">Próza</option>
+                    <option value="dalszöveg">Dalszöveg</option>
+
+                </select>
+
+                <label for="translation" class="form-label">Fordító gondolatai a műről</label>
+                <textarea type="text" class="form-control form-control-sm" formControlName="translation"
+                    name="translation" id="translation" placeholder="" rows="10" cols="50"></textarea>
+
+                <label for="imagePath">
+                    Megjelenítendő kép letöltési linkje:
+                    <input type="text" formControlName="imagePath" id="imagePath">
+                </label>
+
+                <label for="filePath">
+                    Fordítást tartalmazó fájl letöltési linkje:
+                    <input type="text" formControlName="filePath" id="filePath">
+                </label>
+
+                <br>
+                <br>
+                <label for="sender">
+                    Beküldő neve:
+                    <input type="text" formControlName="sender" id="sender">
+                </label>
+
+                <label for="emailAddress">
+                    Email címe:
+                    <input type="email" formControlName="emailAddress" id="emailAddress">
+                </label>
+                <br>
+                <br>
+
+                <label for="creative">
+                    Fordításom beküldésével elfogadom a <a routerLink="/creative-commons" target="_blank">Creative Commons</a> szabályát.
+                </label>
+                <select class="form-select form-select-" name="category" id="creative" formControlName="creative">
+                    <option value="igen">Igen</option>
+                </select>
+                
+            </div>
+            <button style="width: 100px;" [disabled]="!articleForm.valid" type="submit">Beküldés</button>
+        </form>
+    </div>
+
+
+</div>
